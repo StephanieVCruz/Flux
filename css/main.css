@@ -122,7 +122,30 @@ small {
   text-align: center;
 }
 
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: 1px solid #003eff;
+	background: #007fff;
+	font-weight: normal;
+	color: #ffffff;
+}
+
 #clock {
   font-size: 6rem;
   line-height: 110%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#datepicker {
+  padding-left: 1.5em;
+}
+
+#icon img {
+  height: 180px;
+  width: 180px;
 }

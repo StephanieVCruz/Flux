@@ -45,34 +45,34 @@
 
     <!-- First Section Group -->
     <div class="section group">
-      <div class="col span_1_of_4" id="clock">
-        Clock
+      <div class="col span_1_of_4 matchheight">
+        <div id="clock">Clock</div>
       </div>
-      <div class="col span_2_of_4">
+      <div class="col span_2_of_4 matchheight">
         <h3 class="light">TODAY'S OUTLOOK</h3>
       </div>
-      <div class="col span_1_of_4">
+      <div class="col span_1_of_4 matchheight">
         <div id="convert_button">
           <button id="convert_c" class="btn btn-lg convert">Celsius</button>
           <button id="convert_f" class="btn btn-lg convert">Fahrenheit </button>
+          <div id="icon"></div>
+          <div id="city">City, ST</div>
+          <div id="temp">Temperature</div>
+          <div id="weather">Weather</div>
+          <div id="description">Description</div>
         </div>
-        <div id="icon"></div>
-        <div id="city">City, ST</div>
-        <div id="temp">Temperature</div>
-        <div id="weather">Weather</div>
-        <div id="description">Description</div>
       </div>
 
       <!-- Second Section Group -->
       <div class="section group">
-        <div class="col span_1_of_4">
+        <div class="col span_1_of_4 matchheight">
           <div id="datepicker"></div>
         </div>
-        <div class="col span_2_of_4">
+        <div class="col span_2_of_4 matchheight">
           Todo List
         </div>
-        <div class="col span_1_of_4">
-          Blank
+        <div class="col span_1_of_4 matchheight">
+          
         </div>
       </div>
 
@@ -105,6 +105,7 @@
 <!-- Scripts -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="scripts/jquery.matchHeight-min.js"></script>
 <script type="text/javascript" src="scripts/moment.min.js"></script>
 <script type="text/javascript" src="scripts/scripts.js"></script>
 

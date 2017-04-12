@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  //Match Hieght
+   $('.matchheight').matchHeight();
 
   //Date Picker
   $( "#datepicker" ).datepicker();
@@ -41,7 +43,7 @@ $(document).ready(function(){
         $("#weather").text(data.weather[0].main);
         $("#description").text(data.weather[0].description);
         temp_convert(current_temp);
-        $("#icon").append("<img src='http://openweathermap.org/img/w/"+icon+".png'/>");
+        $("#icon").append("<img src='images/"+icon+".png'/>");
       }
 
     });
