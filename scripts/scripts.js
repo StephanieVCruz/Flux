@@ -39,7 +39,7 @@ $(document).ready(function(){
         console.log(icon);
         //$("#filer").html("/");
         $("#city").text(data.name);
-        $("#temp").html(Math.floor(data.main.temp) + "&degC");
+        $("#temp").html(Math.floor(current_temp * 1.8 + 32) + "&degF");
         $("#weather").text(data.weather[0].main);
         $("#description").text(data.weather[0].description);
         temp_convert(current_temp);

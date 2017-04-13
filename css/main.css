@@ -146,6 +146,36 @@ a.ui-button:active,
 }
 
 #icon img {
-  height: 180px;
-  width: 180px;
+  height: 150px;
+  width: 150px;
+  margin: 10px auto;
+}
+
+#city {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 5px auto;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+#temp {
+  margin: 5px auto;
+  font-size: 1.2em;
+}
+
+#weather {
+  margin: 5px auto;
+  font-size: 1.2em;
+}
+
+#description {
+  text-transform: capitalize;
+  margin: 5px auto;
+  font-size: 1.2em;
+}
+
+#convert_button {
+  margin: 5px auto;
+  font-size: 1.2em;
 }
