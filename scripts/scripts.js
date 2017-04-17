@@ -1,6 +1,4 @@
 $(document).ready(function(){
-  //Match Hieght
-   $('.matchheight').matchHeight();
 
   //Date Picker
   $( "#datepicker" ).datepicker();

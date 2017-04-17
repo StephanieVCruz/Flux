@@ -1,12 +1,11 @@
 
 body {
-  background-image: url("../images/img1.jpg");
+  background-image: url("https://source.unsplash.com/category/nature/1600x900");
   background-color: #cccccc;
   margin-top: 1em;
-  margin-left: auto;
-  margin-right: auto;
-}
 
+}
+/*
 html {
   line-height: 1.5;
   font-family: "Roboto", sans-serif;
@@ -117,7 +116,7 @@ small {
 .flow-text {
   font-weight: 300;
 }
-
+*/
 .col {
   text-align: center;
 }
@@ -136,13 +135,11 @@ a.ui-button:active,
 
 #clock {
   font-size: 6rem;
-  line-height: 110%;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 #datepicker {
   padding-left: 1.5em;
+  float: left;
 }
 
 #icon img {
@@ -178,4 +175,8 @@ a.ui-button:active,
 #convert_button {
   margin: 5px auto;
   font-size: 1.2em;
+}
+
+#weather-section {
+  overflow: initial;
 }

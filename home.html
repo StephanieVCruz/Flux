@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!-- HTML5 Boilerplate -->
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
 
 <head>
 
@@ -13,99 +9,74 @@
 
 	<title>Flux HTML Mockup</title>
 
-	<!-- <link rel="shortcut icon" href="/favicon.ico"> -->
-
-	<!-- Responsive and mobile friendly stuff -->
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/html5reset.css" media="all">
-	<link rel="stylesheet" href="css/col.css" media="all">
-	<link rel="stylesheet" href="css/2cols.css" media="all">
-	<link rel="stylesheet" href="css/3cols.css" media="all">
-	<link rel="stylesheet" href="css/4cols.css" media="all">
-	<link rel="stylesheet" href="css/5cols.css" media="all">
-	<link rel="stylesheet" href="css/6cols.css" media="all">
-	<link rel="stylesheet" href="css/7cols.css" media="all">
-	<link rel="stylesheet" href="css/8cols.css" media="all">
-	<link rel="stylesheet" href="css/9cols.css" media="all">
-	<link rel="stylesheet" href="css/10cols.css" media="all">
-	<link rel="stylesheet" href="css/11cols.css" media="all">
-	<link rel="stylesheet" href="css/12cols.css" media="all">
+	<link rel="stylesheet" href="css/materialize.min.css" media="all">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="css/main.css" media="all">
 
 </head>
 
-<body>
+<body class="white-text">
 
-  <div id="containter">
 
     <!-- First Section Group -->
-    <div class="section group">
-      <div class="col span_1_of_4 matchheight">
+    <div class="row">
+      <div class="col s3">
         <div id="clock">Clock</div>
       </div>
-      <div class="col span_2_of_4 matchheight">
+      <div class="col s6">
         <h3 class="light">TODAY'S OUTLOOK</h3>
       </div>
-      <div class="col span_1_of_4 matchheight">
+      <div id="weather-section" class="col s3">
           <div id="icon"></div>
           <div id="city">City, ST</div>
           <div id="temp">Temperature</div>
           <div id="weather">Weather</div>
           <div id="description">Description</div>
-          <div id="convert_button">
-            <button id="convert_c" class="btn btn-lg convert">Celsius</button>
-            <button id="convert_f" class="btn btn-lg convert">Fahrenheit </button>
-          </div>
       </div>
-
+		</div>
       <!-- Second Section Group -->
-      <div class="section group">
-        <div class="col span_1_of_4 matchheight">
-          <div id="datepicker"></div>
-        </div>
-        <div class="col span_2_of_4 matchheight">
+      <div class="row">
+				<div class="col s3">
+					<div id="datepicker"></div>
+				</div>
+        <div class="col s6">
           Todo List
         </div>
-        <div class="col span_1_of_4 matchheight">
+        <div class="col s3">
           <!--Blank-->
         </div>
       </div>
 
       <!-- Third Section Group -->
-      <div class="section group">
-        <div class="col span_1_of_4">
+      <div class="row">
+        <div class="col s3">
           <!--Blank-->
         </div>
-        <div class="col span_2_of_4">
+        <div class="col s6">
           <!--Quotes-->
         </div>
-        <div class="col span_1_of_4">
+        <div class="col s3">
           <!--Blank-->
         </div>
       </div>
 
       <!-- Fourth Section Group -->
-      <div class="section group">
-        <div class="col span_1_of_4">
+      <div class="row">
+        <div class="col s3">
           <!--Blank-->
         </div>
-        <div class="col span_2_of_4">
+        <div class="col s6">
           <!--Links-->
         </div>
-        <div class="col span_1_of_4">
+        <div class="col s3">
           <!--Logo-->
         </div>
       </div>
-
 <!-- Scripts -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="scripts/jquery.matchHeight-min.js"></script>
 <script type="text/javascript" src="scripts/moment.min.js"></script>
 <script type="text/javascript" src="scripts/scripts.js"></script>
 
