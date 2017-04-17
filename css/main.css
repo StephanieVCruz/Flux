@@ -2,8 +2,9 @@
 body {
   background-image: url("https://source.unsplash.com/collection/279582/1600x900");
   background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
   margin-top: 1em;
-
 }
 /*
 html {
@@ -133,8 +134,13 @@ a.ui-button:active,
 	color: #ffffff;
 }
 
+#title {
+  text-shadow: 1px 1px 2px #555;
+}
+
 #clock {
   font-size: 6rem;
+  text-shadow: 1px 1px 3px #555;
 }
 
 #datepicker {
@@ -143,9 +149,13 @@ a.ui-button:active,
   top: 25%;
 }
 
+
 #icon img {
   height: 150px;
   width: 150px;
+  -webkit-filter: drop-shadow(1px 1px 3px #555);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 
 #city {
@@ -153,21 +163,29 @@ a.ui-button:active,
   letter-spacing: 1px;
   font-weight: 500;
   font-size: 1.2em;
+  text-shadow: 1px 1px 3px #555;
 }
 
 #temp {
   font-size: 1.2em;
+  text-shadow: 1px 1px 3px #555;
 }
 
 #forecast {
   font-size: 1.2em;
+  text-shadow: 1px 1px 3px #555;
 }
 
 #description {
   text-transform: capitalize;
   font-size: 1.2em;
+  text-shadow: 1px 1px 3px #555;
 }
 
 #convert_button {
   font-size: 1.2em;
 }
+
+.ui-widget {
+    box-shadow: 1px 1px 3px #555;
+  }

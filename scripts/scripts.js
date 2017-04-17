@@ -104,8 +104,6 @@ $(document).ready(function(){
         var icoClass = "owf owf-"+ weatherCode;
         var current_temp = Math.floor(data.main.temp);
         var icon = data.weather[0].icon;
-        console.log(icon);
-        //$("#filer").html("/");
         $("#city").text(data.name);
         $("#temp").html(Math.floor(current_temp * 1.8 + 32) + "&degF");
         $("#forecast").text(data.weather[0].main);
