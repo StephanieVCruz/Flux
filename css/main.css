@@ -1,6 +1,6 @@
 
 body {
-  background-image: url("https://source.unsplash.com/category/nature/1600x900");
+  background-image: url("https://source.unsplash.com/collection/279582/1600x900");
   background-color: #cccccc;
   margin-top: 1em;
 
@@ -139,44 +139,35 @@ a.ui-button:active,
 
 #datepicker {
   padding-left: 1.5em;
-  float: left;
+  position: fixed;
+  top: 25%;
 }
 
 #icon img {
   height: 150px;
   width: 150px;
-  margin: 10px auto;
 }
 
 #city {
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 5px auto;
   font-weight: 500;
   font-size: 1.2em;
 }
 
 #temp {
-  margin: 5px auto;
   font-size: 1.2em;
 }
 
-#weather {
-  margin: 5px auto;
+#forecast {
   font-size: 1.2em;
 }
 
 #description {
   text-transform: capitalize;
-  margin: 5px auto;
   font-size: 1.2em;
 }
 
 #convert_button {
-  margin: 5px auto;
   font-size: 1.2em;
-}
-
-#weather-section {
-  overflow: initial;
 }

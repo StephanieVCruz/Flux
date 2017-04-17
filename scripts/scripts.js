@@ -1,5 +1,75 @@
 $(document).ready(function(){
+  function cookieList() {
+   if (typeof Cookie.get('list') === 'undefined'){
+     Cookie.set('list', true);
+     $('#list-button').attr('class', 'btn-floating grey');
 
+     // hide list
+     $('#list-section').css('display', 'none');
+
+   } else {
+     Cookie.remove('list');
+     $('#list-button').attr('class', 'btn-floating blue');
+
+     // show list
+     $('#list-section').css('display', 'inline');
+
+   }
+  }
+
+  function cookieCal() {
+   if (typeof Cookie.get('cal') === 'undefined'){
+     Cookie.set('cal', true);
+     $('#cal-button').attr('class', 'btn-floating grey');
+
+     // hide cal
+     $('#cal-section').css('display', 'none');
+
+   } else {
+     Cookie.remove('cal');
+     $('#cal-button').attr('class', 'btn-floating blue');
+
+     // show cal
+     $('#cal-section').css('display', 'inline');
+
+   }
+  }
+
+  function cookieQuote() {
+   if (typeof Cookie.get('quote') === 'undefined'){
+     Cookie.set('quote', true);
+     $('#quote-button').attr('class', 'btn-floating grey');
+
+     // hide quote
+     $('#quote-section').css('display', 'none');
+
+   } else {
+     Cookie.remove('quote');
+     $('#quote-button').attr('class', 'btn-floating blue');
+
+     // show quote
+     $('#quote-section').css('display', 'inline');
+
+   }
+  }
+
+  function cookieWeather() {
+   if (typeof Cookie.get('weather') === 'undefined'){
+     Cookie.set('weather', true);
+     $('#weather-button').attr('class', 'btn-floating grey');
+
+     // hide weather
+     $('#weather-section').css('display', 'none');
+
+   } else {
+     Cookie.remove('weather');
+     $('#weather-button').attr('class', 'btn-floating blue');
+
+     // show weather
+     $('#weather-section').css('display', 'inline');
+
+   }
+  }
   //Date Picker
   $( "#datepicker" ).datepicker();
 
@@ -38,7 +108,7 @@ $(document).ready(function(){
         //$("#filer").html("/");
         $("#city").text(data.name);
         $("#temp").html(Math.floor(current_temp * 1.8 + 32) + "&degF");
-        $("#weather").text(data.weather[0].main);
+        $("#forecast").text(data.weather[0].main);
         $("#description").text(data.weather[0].description);
         temp_convert(current_temp);
         $("#icon").append("<img src='images/"+icon+".png'/>");

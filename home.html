@@ -11,14 +11,29 @@
 
 
 	<!-- Stylesheets -->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="css/materialize.min.css" media="all">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="css/main.css" media="all">
+
+	<!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
 
 <body class="white-text">
 
+	<div class="fixed-action-btn horizontal click-to-toggle">
+		<a class="btn-floating btn-large blue">
+			<i class="material-icons">menu</i>
+		</a>
+		<ul>
+			<li><a class="btn-floating blue" id="list-button" onclick="cookieList"><i class="material-icons">list</i></a></li>
+			<li><a class="btn-floating blue" id="cal-button" onclick="cookieCal"><i class="material-icons">today</i></a></li>
+			<li><a class="btn-floating blue" id="quote-button" onclick="cookieQuote"><i class="material-icons">format_quote</i></a></li>
+			<li><a class="btn-floating blue" id="weather-button" onclick="cookieWeather"><i class="material-icons">location_on</i></a></li>
+		</ul>
+	</div>
 
     <!-- First Section Group -->
     <div class="row">
@@ -32,7 +47,7 @@
           <div id="icon"></div>
           <div id="city">City, ST</div>
           <div id="temp">Temperature</div>
-          <div id="weather">Weather</div>
+          <div id="forecast">Weather</div>
           <div id="description">Description</div>
       </div>
 		</div>
@@ -77,6 +92,8 @@
 <!-- Scripts -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="scripts/materialize.min.js"></script>
+<script type="text/javascript" src="scripts/js.cookie.js"></script>
 <script type="text/javascript" src="scripts/moment.min.js"></script>
 <script type="text/javascript" src="scripts/scripts.js"></script>
 
