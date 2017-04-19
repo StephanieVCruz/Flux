@@ -19,6 +19,14 @@
 	<!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="scripts/materialize.min.js"></script>
+	<script type="text/javascript" src="scripts/js.cookie.js"></script>
+	<script type="text/javascript" src="scripts/moment.min.js"></script>
+	<script type="text/javascript" src="scripts/scripts.js"></script>
+
 </head>
 
 <body class="white-text">
@@ -28,10 +36,10 @@
 			<i class="material-icons">menu</i>
 		</a>
 		<ul>
-			<li><a class="btn-floating blue" id="list-button" onclick="cookieList"><i class="material-icons">list</i></a></li>
-			<li><a class="btn-floating blue" id="cal-button" onclick="cookieCal"><i class="material-icons">today</i></a></li>
-			<li><a class="btn-floating blue" id="quote-button" onclick="cookieQuote"><i class="material-icons">format_quote</i></a></li>
-			<li><a class="btn-floating blue" id="weather-button" onclick="cookieWeather"><i class="material-icons">location_on</i></a></li>
+			<li><a class="btn-floating blue" id="list-button" onclick="cookieList()"><i class="material-icons">list</i></a></li>
+			<li><a class="btn-floating blue" id="cal-button" onclick="cookieCal()"><i class="material-icons">today</i></a></li>
+			<li><a class="btn-floating blue" id="quote-button" onclick="cookieQuote()"><i class="material-icons">format_quote</i></a></li>
+			<li><a class="btn-floating blue" id="weather-button" onclick="cookieWeather()"><i class="material-icons">location_on</i></a></li>
 		</ul>
 	</div>
 
@@ -57,8 +65,25 @@
 					<div id="datepicker"></div>
 				</div>
         <div class="col s6">
-          Todo List
+
+          <div class="todo-box">
+						<div class="todo-top-section">
+							<div class="todo-heading flow-text">TO DO LIST</div>
+							<div class="todo-date light">01/01/2017</div>
+						</div>
+						<div class="todo-middle-section">
+							<div class="todo-list-item">List Item</div>
+							<div class="todo-list-item">List Item</div>
+						</div>
+						<div class="todo-bottom-section">
+							<div class="todo-greeting light">
+								"Nice work! Almost Done."
+							</div>
+						</div>
+					</div>
+
         </div>
+
         <div class="col s3">
           <!--Blank-->
         </div>
@@ -70,8 +95,11 @@
           <!--Blank-->
         </div>
         <div class="col s6">
-          <!--Quotes-->
-        </div>
+          <div class="quotes-box">
+						 <div id="response">Quotes</div>
+						 <a class="waves-effect waves-light btn light" id="quoteAJAX">Get Quote</a>
+
+        	</div>
         <div class="col s3">
           <!--Blank-->
         </div>
@@ -89,13 +117,6 @@
           <!--Logo-->
         </div>
       </div>
-<!-- Scripts -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script type="text/javascript" src="scripts/materialize.min.js"></script>
-<script type="text/javascript" src="scripts/js.cookie.js"></script>
-<script type="text/javascript" src="scripts/moment.min.js"></script>
-<script type="text/javascript" src="scripts/scripts.js"></script>
 
 </body>
 </html>
