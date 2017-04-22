@@ -1,83 +1,15 @@
 $(document).ready(function(){
-  function cookieList() {
-   if (typeof Cookie.get('list') === 'undefined'){
-     Cookie.set('list', true);
-     $('#list-button').attr('class', 'btn-floating grey');
-
-     // hide list
-     $('#list-section').css('display', 'none');
-
-   } else {
-     Cookie.remove('list');
-     $('#list-button').attr('class', 'btn-floating blue');
-
-     // show list
-     $('#list-section').css('display', 'inline');
-
-   }
-  }
-
-  function cookieCal() {
-   if (typeof Cookie.get('cal') === 'undefined'){
-     Cookie.set('cal', true);
-     $('#cal-button').attr('class', 'btn-floating grey');
-
-     // hide cal
-     $('#cal-section').css('display', 'none');
-
-   } else {
-     Cookie.remove('cal');
-     $('#cal-button').attr('class', 'btn-floating blue');
-
-     // show cal
-     $('#cal-section').css('display', 'inline');
-
-   }
-  }
-
-  function cookieQuote() {
-   if (typeof Cookie.get('quote') === 'undefined'){
-     Cookie.set('quote', true);
-     $('#quote-button').attr('class', 'btn-floating grey');
-
-     // hide quote
-     $('#quote-section').css('display', 'none');
-
-   } else {
-     Cookie.remove('quote');
-     $('#quote-button').attr('class', 'btn-floating blue');
-
-     // show quote
-     $('#quote-section').css('display', 'inline');
-
-   }
-  }
-
-  function cookieWeather() {
-   if (typeof Cookie.get('weather') === 'undefined'){
-     Cookie.set('weather', true);
-     $('#weather-button').attr('class', 'btn-floating grey');
-
-     // hide weather
-     $('#weather-section').css('display', 'none');
-
-   } else {
-     Cookie.remove('weather');
-     $('#weather-button').attr('class', 'btn-floating blue');
-
-     // show weather
-     $('#weather-section').css('display', 'inline');
-
-   }
-  }
   //Date Picker
   $( "#datepicker" ).datepicker();
 
   //Clock
-  function update() {
-    $('#clock').html(moment().format('H:mm:ss'));
+  function updateClock() {
+    $("#clock").html(moment().format('H:mm:ss'));
   }
-  setInterval(update, 1000);
+  setInterval(updateClock, 1000);
+
+  $("#dateToDo").html(moment().format('L'));
+
 
   //Weather
   $.ajax({
@@ -130,6 +62,127 @@ $(document).ready(function(){
         });
 
       };
+      $.ajax({
+      url: "http://api.forismatic.com/api/1.0/",
+      jsonp: "jsonp",
+      dataType: "jsonp",
+      data: {
+        method: "getQuote",
+        lang: "en",
+        format: "jsonp"
+      }
+      })
+      .done(quoteUpdate)
+      .fail(handleErr);
+
+      $("#quoteAJAX").click(function() {
+      $.ajax({
+      url: "http://api.forismatic.com/api/1.0/",
+      jsonp: "jsonp",
+      dataType: "jsonp",
+      data: {
+        method: "getQuote",
+        lang: "en",
+        format: "jsonp"
+      }
+      })
+      .done(quoteUpdate)
+      .fail(handleErr);
+      });
 
 
+        function quoteUpdate(response) {
+          quoteText = response.quoteText;
+          quoteAuthor = response.quoteAuthor;
+          $('#log').prepend('<div>' + $('#response').html() + '</div>');
+          $('#response').text('"'+quoteText+'" - '+quoteAuthor);
+          //console.log(response);
+          console.log(response);
+        }
+
+        function handleErr(jqxhr, textStatus, err) {
+          console.log("Request Failed: " + textStatus + ", " + err);
+        }
+        var quoteText = response.quoteText;
+        var quoteAuthor = response.quoteAuthor;
+          $('#response').text('"'+quoteText+'" - '+quoteAuthor);
+
+          $( "#clock" ).draggable();
+          $( "#datepicker" ).draggable();
+          $( "#weather-section" ).draggable();
+          $( "#todo-box" ).draggable();
+          $( "#quotes-box" ).draggable();
    });
+
+
+   function cookieList() {
+    if (typeof Cookie.get('list') === 'undefined'){
+      Cookie.set('list', true);
+      $('#list-button').attr('class', 'btn-floating grey');
+
+      // hide list
+      $('#list-section').css('display', 'none');
+
+    } else {
+      Cookie.remove('list');
+      $('#list-button').attr('class', 'btn-floating blue');
+
+      // show list
+      $('#list-section').css('display', 'inline');
+
+    }
+   }
+
+   function cookieCal() {
+    if (typeof Cookie.get('cal') === 'undefined'){
+      Cookie.set('cal', true);
+      $('#cal-button').attr('class', 'btn-floating grey');
+
+      // hide cal
+      $('#cal-section').css('display', 'none');
+
+    } else {
+      Cookie.remove('cal');
+      $('#cal-button').attr('class', 'btn-floating blue');
+
+      // show cal
+      $('#cal-section').css('display', 'inline');
+
+    }
+   }
+
+   function cookieQuote() {
+    if (typeof Cookie.get('quote') === 'undefined'){
+      Cookie.set('quote', true);
+      $('#quote-button').attr('class', 'btn-floating grey');
+
+      // hide quote
+      $('#quote-section').css('display', 'none');
+
+    } else {
+      Cookie.remove('quote');
+      $('#quote-button').attr('class', 'btn-floating blue');
+
+      // show quote
+      $('#quote-section').css('display', 'inline');
+
+    }
+   }
+
+   function cookieWeather() {
+    if (typeof Cookie.get('weather') === 'undefined'){
+      Cookie.set('weather', true);
+      $('#weather-button').attr('class', 'btn-floating grey');
+
+      // hide weather
+      $('#weather-section').css('display', 'none');
+
+    } else {
+      Cookie.remove('weather');
+      $('#weather-button').attr('class', 'btn-floating blue');
+
+      // show weather
+      $('#weather-section').css('display', 'inline');
+
+    }
+   }
