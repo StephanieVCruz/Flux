@@ -1,4 +1,10 @@
 $(document).ready(function(){
+  $( "#clock" ).draggable();
+  $( "#datepicker" ).draggable();
+  $( "#weather-section" ).draggable();
+  $( "#todo-box" ).draggable();
+  $( "#quotes-box" ).draggable();
+
   //Date Picker
   $( "#datepicker" ).datepicker();
 
@@ -107,82 +113,78 @@ $(document).ready(function(){
         var quoteAuthor = response.quoteAuthor;
           $('#response').text('"'+quoteText+'" - '+quoteAuthor);
 
-          $( "#clock" ).draggable();
-          $( "#datepicker" ).draggable();
-          $( "#weather-section" ).draggable();
-          $( "#todo-box" ).draggable();
-          $( "#quotes-box" ).draggable();
+
    });
 
 
    function cookieList() {
-    if (typeof Cookie.get('list') === 'undefined'){
-      Cookie.set('list', true);
+    if (typeof Cookies.get('list') === 'undefined'){
+      Cookies.set('list', true);
       $('#list-button').attr('class', 'btn-floating grey');
 
       // hide list
-      $('#list-section').css('display', 'none');
+      $('#todo-box').css('display', 'none');
 
     } else {
-      Cookie.remove('list');
+      Cookies.remove('list');
       $('#list-button').attr('class', 'btn-floating blue');
 
       // show list
-      $('#list-section').css('display', 'inline');
+      $('#todo-box').css('display', 'block');
 
     }
    }
 
    function cookieCal() {
-    if (typeof Cookie.get('cal') === 'undefined'){
-      Cookie.set('cal', true);
+    if (typeof Cookies.get('cal') === 'undefined'){
+      Cookies.set('cal', true);
       $('#cal-button').attr('class', 'btn-floating grey');
 
       // hide cal
-      $('#cal-section').css('display', 'none');
+      $('#datepicker').css('display', 'none');
 
     } else {
-      Cookie.remove('cal');
+      Cookies.remove('cal');
       $('#cal-button').attr('class', 'btn-floating blue');
 
       // show cal
-      $('#cal-section').css('display', 'inline');
+      $('#datepicker').css('display', 'block');
 
     }
    }
 
    function cookieQuote() {
-    if (typeof Cookie.get('quote') === 'undefined'){
-      Cookie.set('quote', true);
+    if (typeof Cookies.get('quote') === 'undefined'){
+      Cookies.set('quote', true);
       $('#quote-button').attr('class', 'btn-floating grey');
 
       // hide quote
-      $('#quote-section').css('display', 'none');
+      $('#quotes-box').css('display', 'none');
 
     } else {
-      Cookie.remove('quote');
+      Cookies.remove('quote');
       $('#quote-button').attr('class', 'btn-floating blue');
 
       // show quote
-      $('#quote-section').css('display', 'inline');
+      $('#quotes-box').css('display', 'block');
 
     }
    }
 
    function cookieWeather() {
-    if (typeof Cookie.get('weather') === 'undefined'){
-      Cookie.set('weather', true);
+    if (typeof Cookies.get('weather') === 'undefined'){
+      Cookies.set('weather', true);
       $('#weather-button').attr('class', 'btn-floating grey');
 
       // hide weather
       $('#weather-section').css('display', 'none');
 
     } else {
-      Cookie.remove('weather');
+      Cookies.remove('weather');
       $('#weather-button').attr('class', 'btn-floating blue');
 
       // show weather
-      $('#weather-section').css('display', 'inline');
+      $('#weather-section').css('display', 'block');
 
     }
    }
