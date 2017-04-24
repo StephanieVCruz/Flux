@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+
+  //Draggable
   $( "#clock" ).draggable();
   $( "#datepicker" ).draggable();
   $( "#weather-section" ).draggable();
@@ -10,7 +13,7 @@ $(document).ready(function(){
 
   //Clock
   function updateClock() {
-    $("#clock").html(moment().format('H:mm:ss'));
+    $("#clock").html(moment().format('LTS'));
   }
   setInterval(updateClock, 1000);
 
@@ -52,7 +55,8 @@ $(document).ready(function(){
 
     });
 
-      }; // loadWeather function
+  }
+   // loadWeather function
       function temp_convert(current_temp){
 
         $("#convert_f").on("click", function(){
@@ -67,15 +71,30 @@ $(document).ready(function(){
 
         });
 
-      };
+      }
+
+      //Quotes
+      $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+        $("#quotes-box").prepend(a[0].content + "<p>&mdash; " + a[0].title + "</p>")
+      });
+
+      $('#quotes-box').css('color', 'black');
+      $('#quotes-box').css('padding', '10px');
+      $('#quotes-box').css('font-size', '20px');
+      //Proto
+
+      //End
+      /*
       $.ajax({
+
       url: "http://api.forismatic.com/api/1.0/",
+      Accept: "application/json",
       jsonp: "jsonp",
       dataType: "jsonp",
       data: {
         method: "getQuote",
         lang: "en",
-        format: "jsonp"
+        format: "jsonp",
       }
       })
       .done(quoteUpdate)
@@ -84,12 +103,13 @@ $(document).ready(function(){
       $("#quoteAJAX").click(function() {
       $.ajax({
       url: "http://api.forismatic.com/api/1.0/",
+      Accept: "application/json",
       jsonp: "jsonp",
       dataType: "jsonp",
       data: {
         method: "getQuote",
         lang: "en",
-        format: "jsonp"
+        format: "jsonp",
       }
       })
       .done(quoteUpdate)
@@ -100,8 +120,8 @@ $(document).ready(function(){
         function quoteUpdate(response) {
           quoteText = response.quoteText;
           quoteAuthor = response.quoteAuthor;
-          $('#log').prepend('<div>' + $('#response').html() + '</div>');
-          $('#response').text('"'+quoteText+'" - '+quoteAuthor);
+          //$('#log').prepend('<div>' + $('#response').text('"'+quoteText+'" - '+quoteAuthor) + '</div>');
+
           //console.log(response);
           console.log(response);
         }
@@ -113,10 +133,11 @@ $(document).ready(function(){
         var quoteAuthor = response.quoteAuthor;
           $('#response').text('"'+quoteText+'" - '+quoteAuthor);
 
-
+*/
    });
 
 
+   //Toggle on/off widgets
    function cookieList() {
     if (typeof Cookies.get('list') === 'undefined'){
       Cookies.set('list', true);

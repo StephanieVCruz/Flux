@@ -46,13 +46,13 @@
 
     <!-- First Section Group -->
     <div class="row">
-      <div class="col s3">
+      <div class="col s4">
         <div id="clock">Clock</div>
       </div>
-      <div class="col s6">
+      <div class="col s4">
         <h3 class="light" id="title">TODAY'S OUTLOOK</h3>
       </div>
-      <div id="weather-section" class="col s3">
+      <div id="weather-section" class="col s4">
           <div id="icon"></div>
           <div id="city">City, ST</div>
           <div id="temp">Temperature</div>
@@ -73,9 +73,10 @@
 							<div id="dateToDo" class="todo-date light"></div>
 						</div>
 						<div class="todo-middle-section task-list">
-							<ul>
+							<ul class="todo-list-ul">
 
 							<?php
+
 								require("includes/connect.php");
 
 								$query = mysql_query("SELECT * FROM tasks ORDER BY date ASC, time ASC");
@@ -88,7 +89,7 @@
 										$task_name = $row['task'];
 
 										echo '<li class="animated lightSpeedIn todo-list-item">
-												<span>'.$task_name.'</span>
+												<span class="todo-list-item">'.$task_name.'</span>
 												<img id="'.$task_id.'" class="delete-button" width="10px" src="images/close.svg" />
 											</li>';
 									}
@@ -101,13 +102,13 @@
 						<form class="add-new-task" autocomplete="off">
 							<input type="text" name="new-task" placeholder="Add a new item..." />
 						</form>
-
-						</div>
 						<div class="todo-bottom-section">
-							<div class="todo-greeting light">
-
+							<div class="todo-button">
+								 <a class="waves-effect waves-light btn light" id="addTask">Add Task</a>
 							</div>
 						</div>
+						</div>
+
 					</div>
 
         </div>
@@ -123,11 +124,12 @@
           <!--Blank-->
         </div>
         <div class="col s6">
-          <div id="quotes-box" class="quotes-box">
-						 <div id="response" class="light"></div>
+          <div id="quotes-box" class="quotes-box light">
+						 <!--<div id="response" class="light"></div>
 						 <div class="quote-button">
 						 		<a class="waves-effect waves-light btn light" id="quoteAJAX">New Quote</a>
 						 </div>
+					 -->
 
 
         	</div>
@@ -190,6 +192,26 @@
 			            });
 			        });
 			    }
+
+					  $("#addTask").click(function() {
+
+								var new_task = $('.add-new-task input[name=new-task]').val();
+
+								if(new_task != ''){
+
+										$.post('includes/add-task.php', { task: new_task }, function( data ) {
+
+												$('.add-new-task input[name=new-task]').val('');
+
+												$(data).appendTo('.task-list ul').hide().fadeIn();
+
+												delete_task();
+										});
+								}
+
+								return false; // make sure form doesn't submit twice
+						});
+
 
 			</script>
 

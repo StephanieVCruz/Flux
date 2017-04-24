@@ -28,16 +28,25 @@ a.ui-button:active,
 }
 
 #clock {
-  font-size: 6rem;
+  font-size: 5rem;
   text-shadow: 1px 1px 3px #555;
+  position: absolute;
+  margin-left: 7px;
+  margin-top: 5px;
 }
 
 #datepicker {
   padding-left: 1.5em;
   position: absolute;
-  top: 25%;
+  margin-top: 3%;
 }
 
+#weather-section {
+  margin-top: 2%;
+  margin-left: 80%;
+  width: 170px;
+  position: absolute;
+}
 
 #icon img {
   height: 150px;
@@ -87,8 +96,10 @@ a.ui-button:active,
     border-top-right-radius: 3px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
-    width: 45%;
-    margin: 0 auto;
+    width: 30%;
+    margin-top: 1%;
+    margin-left: 10%;
+    position: absolute;
 }
 
 .todo-heading {
@@ -110,6 +121,7 @@ a.ui-button:active,
   background: #c4e4f2;
   border-top: .5px solid #ccc;
   border-bottom: .5px solid #ccc;
+  text-align: left;
 }
 
 .todo-greeting {
@@ -120,35 +132,11 @@ a.ui-button:active,
 }
 
 .todo-list-item {
-  margin-top: 2px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-bottom: 2px;
+  margin-top: 1px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-bottom: 1px;
   text-align: left;
-  margin-left: 2em;
-}
-
-.quotes-box {
-  display: block;
-  background: #ffffff;
-  box-shadow: 1px 1px 4px #555;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.quote-button {
-  margin: 1em auto;
-  padding-bottom: 1.5em;
-}
-
-#response {
-  padding: 1em 1em .5em;
-  color: #333333;
-  font-size: 1.3em;
 }
 
 
@@ -168,12 +156,13 @@ a.ui-button:active,
 }
 
 .task-list {
-	background: #c4e4f2;
+  padding-right: 15px;
+  background: #2196F3;
 }
 
 .task-list li {
 	font-size: 1.2em;
-	padding: 8px 0;
+	padding: 1px 0;
 	overflow: hidden;
 }
 
@@ -183,6 +172,9 @@ a.ui-button:active,
 	overflow: hidden;
 	text-overflow: ellipsis;
 	float: left;
+  text-align: left;
+  margin-left: 2em;
+  padding-left: 2px;
 }
 
 .task-list li .delete-button {
@@ -200,15 +192,13 @@ a.ui-button:active,
 }
 
 .add-new-task {
-	margin-top: 20px;
-	padding-bottom: 60px;
+	margin-top: 5px;
 }
 
 .add-new-task input[type='text'] {
 	width: 100%;
 	font: normal 1.2em 'Open Sans', Arial, sans-serif;
 	color: #999;
-	box-shadow: 2px 2px 2px #ddd;
 	border: none;
 	border-radius: none;
 	display: block;
@@ -221,8 +211,6 @@ a.ui-button:active,
 	box-sizing: border-box;
 }
 
-
-
 :focus {
 	outline: 0;
 }
@@ -232,4 +220,32 @@ a.ui-button:active,
 		width: 90%;
 		margin: 0 auto;
 	}
+}
+
+.quotes-box {
+  display: block;
+  background: #ffffff;
+  box-shadow: 1px 1px 4px #555;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  width: 90%;
+  margin: 55% auto 0;
+}
+
+.quote-button {
+  margin: 1em auto;
+  padding-bottom: 1.5em;
+}
+
+.todo-button {
+  margin: 1em auto;
+  padding-bottom: 5px;
+}
+
+#response {
+  padding: 1em 1em .5em;
+  color: #333333;
+  font-size: 1.3em;
 }
