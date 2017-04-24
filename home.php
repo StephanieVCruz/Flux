@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="css/materialize.min.css" media="all">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <link rel="stylesheet" href="css/main.css" media="all">
+  <link rel="stylesheet" href="css/extmain.css" media="all">
 
 	<!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -23,10 +23,10 @@
 	<!-- Scripts -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="scripts/materialize.min.js"></script>
-	<script type="text/javascript" src="scripts/js.cookie.js"></script>
-	<script type="text/javascript" src="scripts/moment.min.js"></script>
-	<script type="text/javascript" src="scripts/scripts.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/js.cookie.js"></script>
+	<script type="text/javascript" src="js/moment.min.js"></script>
+	<script type="text/javascript" src="js/extscripts.js"></script>
 
 </head>
 
