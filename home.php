@@ -125,11 +125,13 @@
         </div>
         <div class="col s6">
           <div id="quotes-box" class="quotes-box light">
-						 <!--<div id="response" class="light"></div>
+						<div id="quote-content"></div>
+						<div id="quote-title"></div>
+						 <!--<div id="response" class="light"></div>-->
 						 <div class="quote-button">
 						 		<a class="waves-effect waves-light btn light" id="quoteAJAX">New Quote</a>
 						 </div>
-					 -->
+
 
 
         	</div>

@@ -74,13 +74,51 @@ $(document).ready(function(){
       }
 
       //Quotes
-      $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
-        $("#quotes-box").prepend(a[0].content + "<p>&mdash; " + a[0].title + "</p>")
-      });
+    /* $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+        $("#quotes-box").prepend(a[0].content + "<p>&mdash; " + a[0].title + "</p>");
 
+      });
+*/
       $('#quotes-box').css('color', 'black');
       $('#quotes-box').css('padding', '10px');
       $('#quotes-box').css('font-size', '20px');
+
+      $.ajax( {
+        url: "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1",
+        success: function(data) {
+          var post = data.shift(); // The data is an array of posts. Grab the first one.
+          $('#quote-title').text('- '+post.title);
+          $('#quote-content').html(post.content);
+
+          // If the Source is available, use it. Otherwise hide it.
+          if (typeof post.custom_meta !== 'undefined' && typeof post.custom_meta.Source !== 'undefined') {
+            $('#quote-source').html('Source:' + post.custom_meta.Source);
+          } else {
+            $('#quote-source').text('');
+          }
+        },
+        cache: false
+      });
+
+      $('.quote-button').on('click', function(e) {
+    e.preventDefault();
+    $.ajax( {
+      url: "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1",
+      success: function(data) {
+        var post = data.shift(); // The data is an array of posts. Grab the first one.
+        $('#quote-title').text('- '+post.title);
+        $('#quote-content').html(post.content);
+
+        // If the Source is available, use it. Otherwise hide it.
+        if (typeof post.custom_meta !== 'undefined' && typeof post.custom_meta.Source !== 'undefined') {
+          $('#quote-source').html('Source:' + post.custom_meta.Source);
+        } else {
+          $('#quote-source').text('');
+        }
+      },
+      cache: false
+    });
+  });
       //Proto
 
       //End

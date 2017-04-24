@@ -235,8 +235,7 @@ a.ui-button:active,
 }
 
 .quote-button {
-  margin: 1em auto;
-  padding-bottom: 1.5em;
+  margin: 10px auto;
 }
 
 .todo-button {
